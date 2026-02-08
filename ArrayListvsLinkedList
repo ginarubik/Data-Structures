@@ -1,0 +1,46 @@
+package hu.progmasters;
+
+import java.util.ArrayList;
+import java.util.LinkedList;import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        randomString();
+        LinkedList<String> linkedList = new LinkedList<>();
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        //ezt töltjük a művelet elején
+        long startTime;
+        //ezt töltjük a művelet végén
+        long endTime;
+        //különbség
+        long duration;
+
+        startTime = System.currentTimeMillis();
+        //itt hozzáadjuk a láncolt listához az elemekt mondjuk 10000000 darab stringet.
+        //mindig generáljunk egy random stringet;
+        endTime = System.currentTimeMillis();
+
+        duration = startTime - endTime;
+
+        System.out.println("Duration: " + duration);
+
+    }
+
+    public static String randomString() {
+        int stringLength = 15;
+        int startLetter = 97; //a
+        int endLetter = 122;  //z
+
+        StringBuilder  stringBuilder = new StringBuilder();
+        Random random = new Random();
+
+        for (int i = 0; i <= stringLength; i++) {
+            int letterAsInt = random.nextInt(endLetter - startLetter + 1) + startLetter;
+            char letter = (char)letterAsInt;
+            stringBuilder.append(letter);
+        }
+
+        return stringBuilder.toString();
+    }
+}
