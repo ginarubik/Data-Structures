@@ -3,6 +3,8 @@ package hu.progmasters;
 import java.util.ArrayList;
 import java.util.LinkedList;import java.util.Random;
 
+//Compare speed
+
 public class Main {
     public static void main(String[] args) {
         randomString();
